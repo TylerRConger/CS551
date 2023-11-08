@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+
 import matplotlib.pyplot as plt
 
 def scraper():
@@ -83,6 +84,7 @@ def visualize(allBookInfoList):
 
   # Show the plot
   plt.show()
+
 
 if __name__ == "__main__":   
     
