@@ -59,22 +59,24 @@ def visualize(allBookInfoList):
   book_titles = [book[0] for book in allBookInfoList]
   rank = [book[2] for book in allBookInfoList]
 
+  # Invert the rank data
+  inverted_rank = rank[::-1]
+
   # Create a bar chart
   plt.figure(figsize=(10, 6))
-  plt.barh(book_titles, rank, color='skyblue')
+  plt.barh(book_titles, inverted_rank, color='skyblue')
   plt.xlabel('Ranking')
   plt.title('Book Ranking')
 
   # Adjust layout for better visibility of long book titles
   plt.tight_layout()
 
-  # Show the plot
+  # Show the bar graph
   plt.show()
-
 
   # Create a scatter plot
   plt.figure(figsize=(10, 6))
-  plt.scatter(rank, range(len(book_titles)), c='skyblue', marker='o')
+  plt.scatter(inverted_rank, range(len(book_titles)), c='skyblue', marker='o')
   plt.yticks(range(len(book_titles)), book_titles)
   plt.xlabel('Rank')
   plt.title('Book Rank (Scatter Plot)')
@@ -82,7 +84,7 @@ def visualize(allBookInfoList):
   # Adjust layout for better visibility of book titles
   plt.tight_layout()
 
-  # Show the plot
+  # Show the scatter plot
   plt.show()
 
 
